@@ -46,19 +46,14 @@ void setupGame() {
 }
 
 void getInput() {
-    if ((IsKeyPressed(KEY_W) || IsKeyPressed(KEY_UP)) && currentDirection != DOWN)
+    // Se usar multiplos 'if' ao invés de 'else if' causa bug
+    if ((IsKeyPressed(KEY_W) || IsKeyPressed(KEY_UP)) && currentDirection != DOWN) {
         currentDirection = UP;
-
-    if ((IsKeyPressed(KEY_S) || IsKeyPressed(KEY_DOWN)) && currentDirection != UP)
+    } else if ((IsKeyPressed(KEY_S) || IsKeyPressed(KEY_DOWN)) && currentDirection != UP) {
         currentDirection = DOWN;
-
-    if ((IsKeyPressed(KEY_A) || IsKeyPressed(KEY_LEFT)) &&
-        currentDirection != RIGHT) {
+    } else if ((IsKeyPressed(KEY_A) || IsKeyPressed(KEY_LEFT)) && currentDirection != RIGHT) {
         currentDirection = LEFT;
-    }
-
-    if ((IsKeyPressed(KEY_D) || IsKeyPressed(KEY_RIGHT)) &&
-        currentDirection != LEFT) {
+    } else if ((IsKeyPressed(KEY_D) || IsKeyPressed(KEY_RIGHT)) && currentDirection != LEFT) {
         currentDirection = RIGHT;
     }
 }
