@@ -72,6 +72,7 @@ void checkCollisions() {
 
     if (snake[0].x == apple.x && snake[0].y == apple.y) {
         snakeLength++;
+        snake[snakeLength - 1] = snake[snakeLength - 2];
         if (snakeLength % 2 == 0) {
             gameSpeed++;
             SetTargetFPS(gameSpeed);
