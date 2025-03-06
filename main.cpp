@@ -70,6 +70,13 @@ void checkCollisions() {
         setupGame();
     }
 
+    // Verifica se a cabeça da cobra colidiu contra o corpo
+    for (int i = 1; i < snakeLength - 1; i++) {
+        if (snake[0].x == snake[i].x && snake[0].y == snake[i].y) {
+            setupGame();
+        }
+    }
+
     if (snake[0].x == apple.x && snake[0].y == apple.y) {
         snakeLength++;
         snake[snakeLength - 1] = snake[snakeLength - 2];
